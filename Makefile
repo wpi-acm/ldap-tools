@@ -4,7 +4,11 @@ BINDIR ?= bin
 
 commands := finduser
 
-all: $(commands)
+all: clean $(commands)
 
 finduser:
 	$(GO) build -o . ./cmd/finduser
+
+
+clean:
+	rm -f $(commands)
